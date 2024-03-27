@@ -47,7 +47,7 @@ export default function FAQS() {
       </div>
       <br />
       <div className="py-6 accordion grayish-text leading-relaxed px-8">
-        { Faqs && Faqs.length > 0 && Faqs.map(faq => <Faq data={faq} />) }
+        { Faqs && Faqs.length > 0 && Faqs.map((faq, index) => <Faq key={index} data={faq} />) }
       </div>
       <div className="text-center">
         <a
@@ -84,11 +84,17 @@ function Faq({ data }) {
           }
         </span>
       </div>
-      <div className={ "leading-normal md:text-xl lg:text-xl xl:text-2xl" + (open ? "" : " hidden")}>
-        <div className="pt-3 pb-5">
-          <small>{data.answer}</small>
+      <div className="overflow-hidden" style={{ transition: "all 1s ease-out" }}>
+        <div
+          className="leading-normal md:text-xl lg:text-xl xl:text-2xl"
+          style={{ maxHeight: open ? 'max-content' : '0' }}
+        >
+          <div className="pt-3 pb-5">
+            <small>{data.answer}</small>
+          </div>
         </div>
       </div>
+      
     </div>
   );
 }

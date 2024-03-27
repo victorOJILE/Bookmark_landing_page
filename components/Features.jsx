@@ -19,7 +19,9 @@ export default function Features() {
           </p>
         </div>
         <br />
-        <TabSection />
+        <div >
+          <TabSection />
+        </div>
       </section>
       <br />
       <br />

@@ -19,32 +19,3 @@ export default function Home() {
     </>
   );
 }
-
-/*
-  
-  Features
-  Pricing
-  Contact
-  Login
-		
-		
-		<img src="/images/icon-arrow.svg" alt="" />
-		<img src="/images/icon-close.svg" alt="" />
-		<img src="/images/icon-error.svg" alt="" />
-		<img src="/images/icon-hamburger.svg" alt="" />
-		<img src="/images/illustration-features-tab-1.svg" alt="" />
-		<img src="/images/illustration-features-tab-2.svg" alt="" />
-		<img src="/images/illustration-features-tab-3.svg" alt="" />
-		
-
-  Features
-  Pricing
-  Contact
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-*/

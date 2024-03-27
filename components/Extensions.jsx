@@ -33,7 +33,7 @@ export default function Extensions() {
             alt=""
             aria-label="Design Seperator"
           />
-          <a href="" className="text-sm xl:text-base max-w-56 p-3 rounded softBlue-btn">
+          <a href="" className="text-sm xl:text-base max-w-64 p-3 rounded softBlue-btn">
             <strong>Add & Install Extension</strong>
           </a>
         </div>
@@ -77,7 +77,7 @@ export default function Extensions() {
             alt=""
             aria-label="Design Seperator"
           />
-          <a href="" className="text-sm xl:text-base max-w-56 p-3 rounded softBlue-btn">
+          <a href="" className="text-sm xl:text-base max-w-64 p-3 rounded softBlue-btn">
             <strong>Add & Install Extension</strong>
           </a>
         </div>

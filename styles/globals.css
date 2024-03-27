@@ -2,14 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
+@font-face {
 	font-family: "roboto";
 	src: url(../public/Roboto-Regular.ttf);
-} */
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth
+	}
+
+	body {
+		background-color: white;
+		--softRed: hsl(0, 94%, 66%);
+		--softBlue: hsl(231, 69%, 60%);
+		--softBlueHover: hsl(231, 61%, 57%);
+		font-family: roboto;
+	}
+
+	h1, h2, h3, h4 {
+		color: hsl(229, 31%, 21%);
+	}
+
+	header > div {
+		background: url(../public/bg-tablet-pattern.svg);
+		background-size: 80%;
+		background-position: bottom 60% right -20px;
+		background-repeat: no-repeat;
+	}
+
+	@media (min-width: 400px) {
+		header > div {
+			background-position: bottom 45% right -20px;
+		}
+	}
+
+	@media (min-width: 540px) {
+		header > div {
+			background-size: 70%;
+			background-position: bottom 20% right -10%;
+		}
+	}
+
+	@media (min-width: 768px) {
+		header > div {
+			background-size: 40%;
+			background-position: bottom -50% right -20%;
+		}
+	}
+}
 
 @layer components {
 	.softRed-btn {
-		background-color: hsl(0, 94%, 66%);
+		background-color: var(--softRed);
 		color: #E8EAFF;
 		font-weight: 600;
 		display: inline-block;
@@ -18,35 +63,21 @@
 
 	.softRed-btn:hover {
 		background-color: rgb(255, 234, 234);
-		color: hsl(0, 94%, 66%);
-		box-shadow: inset 0px 0px 0px 2px hsl(0, 94%, 66%), 0px 2px 5px 0px hsl(0, 94%, 66%);
+		color: var(--softRed);
+		box-shadow: inset 0px 0px 0px 2px var(--softRed), 0px 2px 5px 0px var(--softRed);
 	}
 }
 
-html {
-	scroll-behavior: smooth
-}
-
-body {
-	background-color: white;
-	--hover-orange: hsl(0, 94%, 66%);
-}
-
-h1, h2, h3, h4 {
-	color: hsl(229, 31%, 21%);
-}
-
 .container {
-	margin: 0 auto
+	@apply mx-auto
 }
 
 .flex-ac {
-	display: flex;
-	align-items: center
+	@apply flex items-center
 }
 
 .resp-align {
-	text-align: center;
+	@apply text-center
 }
 
 @media (min-width: 768px) {
@@ -56,26 +87,24 @@ h1, h2, h3, h4 {
 }
 
 .softBlue, .softBlue-btn {
-	background-color: hsl(231, 69%, 60%);
+	background-color: var(--softBlue);
 	color: #E8EAFF;
-	color: hsl(0, 0%, 100%);
 }
 
 .softBlue-btn {
-	display: inline-block;
-	text-align: center;
-	box-shadow: inset 0px 0px 9px hsl(231, 61%, 57%);
+	@apply inline-block text-center;
+	box-shadow: inset 0px 0px 9px var(--softBlueHover);
 	transition: all 500ms
 }
 
 .softBlue-btn:hover {
 	background-color: whitesmoke;
 	color: hsl(229, 8%, 60%);
-	box-shadow: inset 0px 0px 0px 2px hsl(231, 61%, 57%), 0px 2px 5px 0px hsl(231, 61%, 57%);
+	box-shadow: inset 0px 0px 0px 2px var(--softBlueHover), 0px 2px 5px 0px var(--softBlueHover);
 }
 
 .softRed {
-	background-color: hsl(0, 94%, 66%);
+	background-color: var(--softRed);
 	color: #FFE8E8;
 }
 
@@ -84,22 +113,15 @@ h1, h2, h3, h4 {
 }
 
 .nav-mobile-bg {
-	position: fixed;
-	left: 0;
-	width: 100%;
+	@apply fixed top-0 w-full h-screen z-50;
 	background-color: rgba(2, 31, 59, 0.671);
-	height: 100vh;
-	z-index: 99;
+	color: hsl(0, 0%, 100%);
 }
 
 .nav-mobile-bg > ul {
 	margin: 0 auto;
 	max-width: 30rem;
 	text-align: center;
-}
-
-.nav-mobile-bg {
-	color: hsl(0, 0%, 100%);
 }
 
 .nav-mobile-bg li {
@@ -127,26 +149,45 @@ h1, h2, h3, h4 {
 	
 	.nav-mobile-bg > ul {
 		background-color: transparent;
-		width: auto;
-		text-align: left;
 		display: flex;
 		align-items: center;
-		max-width: max-content;
+		justify-content: flex-end;
+		max-width: none;
 		padding: 0.1rem 0
 	}
 	
 	.nav-mobile-bg li {
 		display: inline-block;
 		padding: 1rem 0;
-		margin: 0 0.75rem;
-		font-size: 0.75rem;
+		margin: 0 0.95rem;
+		font-size: 1rem;
 		color: #7B7BA1;
 		border: none;
 		border-bottom: 3px solid transparent;
 	}
 	
+	.nav-mobile-bg li:first-child {
+		border-style: none none solid none;
+	}
+
 	.nav-mobile-bg li:hover {
 		border-bottom: 3px solid #55CF9E;
+	}
+
+	.loginBtn {
+		width: 8rem;
+		background-color: var(--softRed);
+		color: #E8EAFF;
+		font-weight: 600;
+		margin-left: 0.95rem;
+		display: inline-block;
+		transition: all 500ms
+	}
+
+	.loginBtn:hover {
+		background-color: rgb(255, 234, 234) !important;
+		color: var(--softRed);
+		box-shadow: inset 0px 0px 0px 2px var(--softRed), 0px 2px 5px 0px var(--softRed);
 	}
 }
 
@@ -184,7 +225,7 @@ footer {
 .accordion-tab>div:hover,
 .accordion h4:hover,
 footer a:hover {
-	color: var(--hover-orange);
+	color: var(--softRed);
 }
 
 @media (min-width: 768px) {
