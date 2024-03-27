@@ -18,10 +18,10 @@ export default function Header() {
               <p className="grayish-text text-base md:text-xl lg:text-xl xl:text-2xl py-3 md:py-5"><small>A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.</small></p>
             </div>
             <div className="flex justify-center md:justify-start py-5 px-8 text-sm xl:text-xl">
-              <a className="w-2/5 md:w-1/2 max-w-56 py-3 rounded softBlue-btn mr-3" href="#">
+              <a className="w-2/5 md:w-1/2 max-w-56 px-1 py-3 rounded softBlue-btn mr-3" href="#">
                 <strong>Get it on Chrome</strong>
               </a>
-              <a className="w-2/5 md:w-1/2 max-w-56 text-center grayish-text py-3 rounded bg-gray-100 shadow-lg hover:bg-white" href="#">
+              <a className="w-2/5 md:w-1/2 max-w-56 px-1 text-center grayish-text py-3 rounded bg-gray-100 shadow-lg hover:bg-white" href="#">
                 <strong>Get it on Firefox</strong>
               </a>
             </div>

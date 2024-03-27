@@ -37,7 +37,7 @@ export default function Footer() {
               </a>
             </li>
           </ul>
-          <p className="text-center py-2">
+          <p className="text-center py-2 mt-4 text-sm text-gray-400 lg:text:base">
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
             Coded by <a href="#">Victor OJile</a>.
           </p>
